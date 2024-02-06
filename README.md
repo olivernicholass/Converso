@@ -1,6 +1,6 @@
-# Converso 🌏 - Your Interactive Forum Platform
+# Fanpit ⚽ - Your Stadium of Sports Discussions!
 
-Welcome to Converso, an engaging forum application where users can connect, share ideas, and explore diverse topics in a vibrant community.
+Welcome to Fanpit, an engaging forum application where users can connect, share ideas, and explore and contribute to discussions around their favorite sports.
 
 Our Team Members:
 
