@@ -1,11 +1,11 @@
 .body {
-  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f2f2f2;
+  background-color: #F8F9FA;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  font-family:'cr-regulat', sans-serif;
 }
 
 @font-face {
@@ -29,13 +29,6 @@
   gap: 50px;
 }
 
-.body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f2f2f2;
-  min-height: 100vh;
-}
 
 .main-posts {
   margin: 20px 0;
@@ -66,7 +59,7 @@
   border-radius: 5px;
   cursor: pointer;
   margin-right:10px;
-  background-color:fff;
+  background-color:#fff
 }
 
 
