@@ -40,6 +40,13 @@
     min-height: 100vh;
 }
 
+.fanpit-logo {
+    max-width: 50%;
+    height: auto;
+    margin-left:10px;
+    display: block;
+  }
+
 .main-posts {
     margin: 20px 0;
     display: flex;
