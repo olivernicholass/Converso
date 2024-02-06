@@ -34,7 +34,8 @@
   margin: 20px 0;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  margin-left: 190px;
 }
 
 .main-post-card {
@@ -82,11 +83,13 @@
   }
 }
 
-@media (min-width: 1441px) and (max-width: 1920px) {
-  .main-post-card {
-    width: calc(45% - 20px); 
+@media (min-width:1536px) {
+  .col-lg-8 main-posts {
+    margin-left:190px;
   }
 }
+
+
 
 .main-post-card .card-title {
   margin-bottom: 10px; 
