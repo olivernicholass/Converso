@@ -1,0 +1,23 @@
+body {
+    background-color: #212529;
+}
+
+.post-container{
+    background-color: #F8F9FA;
+    margin-left: 15em;
+    margin-right: 20em;
+    margin-bottom: 1em;
+    margin-top: 1em;
+    padding: 10px;
+}
+
+.title-container{
+    background-color: #212529;
+    color: #F8F9FA;
+    margin-left: 15em;
+    margin-right: 20em;
+    margin-bottom: 1em;
+    margin-top: 1em;
+    text-decoration: underline;
+    text-align: center;
+}
