@@ -1,0 +1,75 @@
+.navbar {
+  font-family: 'cr-light', sans-serif;
+  background-color: #F8F9FA !important;
+
+}
+
+@font-face {
+  font-family: 'cr-light';
+  src: url('../fonts/CircularStd-Light.otf') format('truetype');
+
+}
+
+@font-face {
+  font-family: 'cr-regular';
+  src: url('../fonts/CircularStd-Medium.otf') format('truetype');
+
+}
+
+.form-outline input::placeholder {
+  font-family: 'cr-light', sans-serif;
+}
+
+.navbar-toggler-icon {
+  background-color: #ffffff;
+}
+
+.navbar-toggler {
+  padding: 0.25rem 0.75rem;
+}
+
+.form-control {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  width:35%;
+}
+
+
+.custom-center {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-nav .nav-link img {
+  width: 40px;
+  height: 40px;
+  border-radius: 0%;
+  margin: 5px;
+  transition: filter 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-link img:hover {
+  filter: #CED4DA;
+}
+
+.converso-logo {
+  max-width: 70%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.navbar,
+.navbar-form,
+.navbar-toggler,
+.navbar-nav,
+.nav-link,
+.navbar-toggler-icon,
+.form-outline {
+  font-family: 'cr-regular', sans-serif;
+}
+
+.card-text {
+  font-family: 'cr-light', sans-serif;
+}
