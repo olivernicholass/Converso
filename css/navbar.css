@@ -53,9 +53,10 @@
   filter: #CED4DA;
 }
 
-.converso-logo {
-  max-width: 70%;
+.fanpit-logo {
+  max-width: 50%;
   height: auto;
+  margin-left:10px;
   display: block;
 }
 
