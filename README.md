@@ -1,6 +1,6 @@
-# ![Fanpit Logo](images/fanpit-no-bg.png) - Your Stadium of Sports Discussions!
+# Fanpit ⚽ - Your Stadium of Sports Discussions!
 
-Welcome to Fanpit, an engaging forum application where users can connect, share ideas, and explore/ontribute to discussions around their favorite sports.
+Welcome to Fanpit, an engaging forum application where users can connect, share ideas, and explore and contribute to discussions around their favorite sports.
 
 Our Team Members:
 
