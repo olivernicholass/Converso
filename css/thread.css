@@ -154,22 +154,6 @@
     border-radius: 5px;
 }
 
-@media (max-width: 1200px) {
-    .custom-sidebar {
-        display: none;
-    }
-}
-
-@media (max-width: 1000px) {
-    .custom-sidebar {
-        display: none;
-    }
-
-    .recent-posts {
-        display: none;
-    }
-}
-
 .button-section {
     margin-bottom: 20px;
 }
@@ -198,9 +182,6 @@
     height: 45px;
 }
 
-.user-info {
-    
-}
 
 .post-header{
     display: flex;

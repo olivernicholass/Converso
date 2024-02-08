@@ -1,19 +1,8 @@
 .navbar {
   font-family: 'cr-light', sans-serif;
   background-color: #F8F9FA !important;
-
-}
-
-@font-face {
-  font-family: 'cr-light';
-  src: url('../fonts/CircularStd-Light.otf') format('truetype');
-
-}
-
-@font-face {
-  font-family: 'cr-regular';
-  src: url('../fonts/CircularStd-Medium.otf') format('truetype');
-
+  display: flex;
+  justify-content: space-between;
 }
 
 .form-outline input::placeholder {
@@ -28,13 +17,12 @@
   padding: 0.25rem 0.75rem;
 }
 
-.form-control {
-  display: flex;
-  justify-content: center; 
-  align-items: center;
-  width:35%;
-}
 
+.form-control {
+  font-family: 'cr-light', sans-serif;
+  margin-left:300px;
+  width: 35%;
+}
 
 .custom-center {
   display: flex;
@@ -56,8 +44,13 @@
 .fanpit-logo {
   max-width: 50%;
   height: auto;
-  margin-left:10px;
+  margin-left: 10px;
   display: block;
+}
+
+.navbar-brand {
+  padding: 0; 
+  margin: 0; 
 }
 
 .navbar,
@@ -72,4 +65,14 @@
 
 .card-text {
   font-family: 'cr-light', sans-serif;
+}
+
+@font-face {
+  font-family: 'cr-light';
+  src: url('../fonts/CircularStd-Light.otf') format('truetype');
+}
+
+@font-face {
+  font-family: 'cr-regular';
+  src: url('../fonts/CircularStd-Medium.otf') format('truetype');
 }
