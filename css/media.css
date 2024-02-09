@@ -12,18 +12,18 @@
     }
   }
   
-  @media (min-width: 1536px) {
+  @media (min-width: 1800px) {
     .main-posts {
       display: grid;
-      grid-template-columns: repeat(3, minmax(500px, 1fr)); 
+      grid-template-columns: repeat(3, minmax(400px, 1fr)); 
       gap: 20px;
     }
   
     .main-post-card {
       width: 100%; 
+      height: 100%; 
     }
   }
-
 
  @media (max-width: 1000px) {
     .custom-sidebar {
@@ -39,6 +39,11 @@
     .custom-sidebar {
       display: none;
     }
+    
+    .main-posts {
+      display: block; 
+    }
+
   
     .recent-posts{
       display:none;

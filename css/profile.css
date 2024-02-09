@@ -1,0 +1,127 @@
+.profile-container-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; 
+    min-height: 100vh;
+    margin-top: 20px;
+    width: 60%;
+    background-color: #212529;
+    padding: 20px;
+    margin: 0 auto; 
+}
+
+.profile-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    align-self: flex-start; 
+   
+}
+
+.profile-picture {
+    width: 125px;
+    height: 125px; 
+    border-radius: 80%;
+    margin-right: 10px;
+    border: 2px solid;
+    padding: 5px;
+    margin-top: 20px; 
+    border: 2px solid;
+    border-color: #E9ECEF
+}
+
+.separator {
+    width: 100%;
+    height: 2px;
+    background-color: #E9ECEF;
+    margin-top: 20px;
+    border: 0;
+}
+.profile-username {
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 20px; 
+    margin-left: 10px;
+    font-family: 'cr-bold', sans-serif;
+    color: #F8F9FA;
+}
+
+.profile-subname {
+    margin-left: 10px;
+    font-family: 'cr-light', sans-serif;
+    color: #F8F9FA;
+}
+
+.activity-section {
+    flex-grow: 1; 
+    border-radius: 15px; 
+    background-color: #CED4DA;  
+    width: 100%;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+.activity-section img {
+    display: block;
+    margin: 0 auto; 
+    width: 500px;
+}
+
+.activity-section .text {
+    font-size: 20px;
+    font-weight: 600;
+} 
+
+
+.profile-sections {
+    display: flex;
+    justify-content: center;
+    align-self: flex-start; 
+    font-size: 15px;
+    padding: 10px;
+    font-family: 'cr-light', sans-serif;
+}
+
+.profile-section {
+    margin-right: 20px;
+    background-color: #E9ECEF;
+    padding: 11px;
+    border-radius: 15px;
+    font-weight: 600;
+    border: 1px solid;
+    border-color: #E9ECEF
+}
+
+.create-post-button {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #E9ECEF;
+    color: #000;
+    margin-left: 10px;
+    align-self: flex-start;
+    border-color: #212529;
+    border: 1px solid;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+    font-family: 'cr-light', sans-serif;
+}
+
+.profile-section:hover {
+    background-color: #CED4DA;
+}
+
+.create-post-button:hover {
+    background-color: #CED4DA;
+}
+
+.profile-section:last-child {
+    margin-right: 0;
+}

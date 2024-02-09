@@ -44,9 +44,8 @@
   padding: 15px;
   margin-bottom: 20px;
   border-radius: 10px;
-  width: calc(45% - 20px); 
+  width: calc((45% - 20px) * 0.7);
 }
-
 .post-buttons {
   display: flex;
   margin-top: 10px;
@@ -60,8 +59,16 @@
   border-radius: 5px;
   cursor: pointer;
   margin-right:10px;
-  background-color:#fff
+  background-color: transparent; 
+  transition: background-color 0.3s, transform 0.3s; 
 }
+
+.like-button:hover,
+.comment-button:hover,
+.share-button:hover {
+  transform: scale(1.05); /
+}
+
 
 
 .like-button:hover img {
@@ -148,5 +155,11 @@
   color: #343a40;
   border: none;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, transform 0.3s; 
+}
+
+.button:hover {
+  background-color: #ced4da;
+  color: #212529;
+  transform: scale(1.05); 
 }

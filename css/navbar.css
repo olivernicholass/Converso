@@ -18,6 +18,7 @@
 }
 
 
+
 .form-control {
   font-family: 'cr-light', sans-serif;
   margin-left:300px;
@@ -52,6 +53,15 @@
   padding: 0; 
   margin: 0; 
 }
+
+.nav-item{
+transition: background-color 0.3s, transform 0.3s; 
+}
+
+.nav-item:hover{
+  transform: scale(1.05); /
+}
+
 
 .navbar,
 .navbar-form,
