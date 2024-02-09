@@ -1,4 +1,6 @@
-# Fanpit ⚽ - Your Stadium of Sports Discussions!
+<img src="images/fanpit_inverted.png" width="250" height="100"> 
+
+⚽ 🏀 🏈 ⚾ - Your Stadium of Sports Discussions!
 
 Welcome to Fanpit, an engaging forum application where users can connect, share ideas, and explore and contribute to discussions around their favorite sports.
 
