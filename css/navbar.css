@@ -3,6 +3,7 @@
   background-color: #F8F9FA !important;
   display: flex;
   justify-content: space-between;
+  padding: 0 10px; 
 }
 
 .form-outline input::placeholder {
@@ -17,12 +18,41 @@
   padding: 0.25rem 0.75rem;
 }
 
+.profile {
+  position: relative;
+}
+
+.profile-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 5px);
+  right: 0;
+  background-color: #F8F9FA;
+  border: 1px solid #ced4da;
+  padding: 5px 0;
+  min-width: 120px;
+  padding:10px;
+  border-radius: 8px;
+}
+
+.profile-menu li {
+  list-style: none;
+}
+
+.profile-menu a{
+  color:#212529;
+}
+
+.profile-icon:hover + .profile-menu,
+.profile-menu:hover {
+  display: block;
+}
 
 
 .form-control {
   font-family: 'cr-light', sans-serif;
-  margin-left:300px;
   width: 35%;
+  margin: 0 auto; 
 }
 
 .custom-center {

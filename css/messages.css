@@ -1,0 +1,154 @@
+body{ 
+    background-color: #212529;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.custom-sidebar {
+    background-color: #212529;
+    color: #f8f9fa;
+    width: 100px;
+    padding: 20px;
+    transition: width 0.3s;
+    position: fixed;
+    left: 0;
+    height: 100%;
+    margin-left:10px;
+  }
+  
+  .button-section {
+    margin-bottom: 20px;
+  }
+  
+  .button-section h2 {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .button {
+    display: block;
+    padding: 10px;
+    margin-bottom: 15px;
+    text-align: center;
+    background-color: #dee2e6;
+    color: #343a40;
+    margin-left:5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; 
+  }
+  
+
+  .button:hover {
+    background-color: #ced4da;
+    color: #212529;
+    transform: scale(1.05); 
+  }
+  
+  .custom-sidebar button {
+    border-radius: 5px;
+  }
+  
+
+.username{
+    font-size:25px;
+    font-weight:500;
+    padding:10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+  .icon {
+    width: 50px; 
+    height: 50px;
+  }
+
+  .person-box-highlighted {
+    background-color: #E9ECEF; 
+    color:#212529;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    font-size:20px;
+}
+
+.profile-picture {
+    width: 80px; 
+    height: 80px; 
+    border-radius: 50%; 
+    margin-right: 10px;
+    padding: 5px;
+    border: 2px solid #E9ECEF;
+    margin-top: 20px; 
+    margin-left:10px;
+    box-sizing: border-box; 
+}
+
+.messages-container {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    margin-left: 6%; 
+}
+
+.people-container {
+    flex: 0.7; 
+    max-height: 100%;
+    background-color: #212529;
+    color: #ced4da;
+    border: 3px solid #ced4da;
+    border-top: 0px;
+    border-bottom: 0px;
+    border-right:0px;
+    overflow-y: auto;
+    width: 1000px; 
+}
+  .person-box {
+    padding: 10px;
+    font-size:20px;
+  }
+  
+  .user-messages-container {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .message-input-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ced4da;
+    border-radius: 30px;
+    padding: 10px 20px;
+    width: 80%;
+    max-width: 600px;
+    margin: auto; 
+    margin-bottom:40px;;
+  }
+
+  
+  .message-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 8px 15px;
+    border-radius: 30px;
+    background-color: #ced4da;
+  }
+  
+  .send-button {
+    background-color: #212529;
+    color: #ced4da;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  
