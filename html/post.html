@@ -9,7 +9,9 @@
 
 <body>
     <div class="title-container">
-        <h3>Create a Post</h1>
+        <img src="../images/fanpit_inverted.png">
+        <h3>Create Post</h3>
+        <hr>
     </div>
     <div class="post-container">
         <div class="row">
@@ -17,9 +19,21 @@
                 <form action="" method="POST">
 
                     <div class="dropdown">
-                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
-                            Sport
-                            <span class="caret"></span></button>
+                        
+                        <select for="sport" id="sport-dropdown">
+                            <option>Select a sport</option>
+                            <option>Hockey</option>
+                            <option>Football</option>
+                            <option>Motorsports</option>
+                            <option>Basketball</option>
+                            <option>Boxing</option>
+                            <option>Martial Arts</option>
+                            <option>Volleyball</option>
+                            <option>Baseball</option>
+                            <option>Golf</option>
+                            <option>Tennis</option>
+                        </select>
+                            
                         <ul class="dropdown-menu">
                             <li><a href="#">HTML</a></li>
                             <li><a href="#">CSS</a></li>
@@ -34,12 +48,21 @@
                     </div>
                     <div class="form-group">
                         <label for="description">Post body</label>
-                        <textarea rows="5" type="text" class="form-control"
-                            placeholder="Enter Text (Optional)">test</textarea>
+                        <textarea id="text-body" rows="5" type="text" class="form-control" placeholder="Enter Text (Optional)"></textarea>
+                    </div>
+                    <div class="image-link">
+                        <div class="form-group">
+                            <label>Add Images</label>
+                            <input type="image" class="image-input" alt="add">
+                        </div>
+                        <div class="form-group">
+                            <label>Add Images</label>
+                            <input type="image" class="image-input" alt="add">
+                        </div> 
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary">Post</button>
-                        <button class="btn btn-default">Back</button>
+                        <button type="submit" class="btn btn-primary" style="background-color: #212529; border: 2px solid steelblue;">Post</button>
+                        <button class="btn btn-default" >Back</button>
                     </div>
 
 
