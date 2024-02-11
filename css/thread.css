@@ -193,7 +193,52 @@
     flex-direction: column;
 }
 
-.comment{
+.comment-container{
+    margin-top: 1em;
+    margin-left: 0;
     display: flex;
-    flex-direction: row;
+    gap: 1em;
 }
+.comment-text{
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+}
+
+.reply-container{
+    border-left: 2px solid black;
+    margin-left: 2em;
+    padding-left: 1em;
+    
+}
+.reply-main{
+    background-color: #ffffff;
+    border-radius: .5em;
+    padding: 1em;
+    margin-bottom: .5em;
+}
+.replies{
+    margin-top: 0em;
+    margin-bottom: 2em;
+    width: calc(100%);
+}
+
+.reply-link-container{
+    display: block;
+    margin: .25em;
+    margin-left: 0em;
+    padding: .5em;
+    background-color: #f8f9fa;
+    border-radius: 2em;
+    width: 5em;
+    text-align: center;
+}
+
+.reply-link{
+    text-decoration: none;
+    color: #212529;
+}
+
