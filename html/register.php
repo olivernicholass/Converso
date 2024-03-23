@@ -62,6 +62,7 @@ $birthday = @$_POST['birthday'];
 
 if(isset($_POST['submit'])){
 echo $nickname . " ; " . $username . " ; " . $password . " ; " . $email . " ; " . $birthday;
+
 $sql = "INSERT INTO user (nickname, username, pass, email, birthday) VALUES (?,?,?,?,?);";
 
 $prep_stmt = mysqli_prepare($connection, $sql);

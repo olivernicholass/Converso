@@ -1,3 +1,7 @@
+<?php
+require 'connect.php';
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -16,7 +20,7 @@
     <div class="post-container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
-                <form action="" method="POST">
+                <form action="upload.php" method="POST">
 
                     <div class="dropdown">
                         
@@ -44,24 +48,20 @@
 
                     <div class="form-group">
                         <label>Title</label>
-                        <input type="text" class="form-control" name="title" placeholder="Enter Title" required>
+                        <input type="text" class="form-control" name="title" placeholder="Enter Title">
                     </div>
                     <div class="form-group">
                         <label for="description">Post body</label>
-                        <textarea id="text-body" rows="5" type="text" class="form-control" placeholder="Enter Text (Optional)"></textarea>
+                        <textarea id="text-body" name="content" rows="5" type="text" class="form-control" placeholder="Enter Text (Optional)"></textarea>
                     </div>
                     <div class="image-link">
                         <div class="form-group">
-                            <label>Add Images</label>
-                            <input type="image" class="image-input" alt="add">
+                            <label>Add Image</label>
+                            <input type="file" class="image-input" alt="add" accept="image/*">
                         </div>
-                        <div class="form-group">
-                            <label>Add Images</label>
-                            <input type="image" class="image-input" alt="add">
-                        </div> 
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary" style="background-color: #212529; border: 2px solid steelblue;">Post</button>
+                        <button type="submit" name="submit" class="btn btn-primary" style="background-color: #212529; border: 2px solid steelblue;">Post</button>
                         <button class="btn btn-default" >Back</button>
                     </div>
 
