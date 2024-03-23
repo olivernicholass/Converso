@@ -40,7 +40,7 @@
                         <label for="birthday" class="label-birth">Birthday</label>
                     </div>
                     <div class="submit-box">
-                        <input type="submit" value="Sign Up" />
+                        <input type="submit" name="submit" value="Sign Up" />
                     </div>
                     <div class="login">
                         <span>Already have an account? <a href="#"> Login</a></span>
@@ -56,10 +56,12 @@
 require_once 'connect.php';
 $nickname = @$_POST['nickname'];
 $username = @$_POST['username'];
-$pass = @$_POST['password'];
+$password = @$_POST['password'];
 $email = @$_POST['email'];
 $birthday = @$_POST['birthday'];
 
+if(isset($_POST['submit'])){
+echo $nickname . " ; " . $username . " ; " . $password . " ; " . $email . " ; " . $birthday;
 $sql = "INSERT INTO user (nickname, username, pass, email, birthday) VALUES (?,?,?,?,?);";
 
 $prep_stmt = mysqli_prepare($connection, $sql);
@@ -69,5 +71,7 @@ if (mysqli_stmt_execute($prep_stmt)) {
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($connection);
 }
-echo $nickname . " ; " . $username . " ; " . $pass . " ; " . $email . " ; " . $birthday;
+
+}
+
 ?>
