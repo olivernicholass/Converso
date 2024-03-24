@@ -22,6 +22,7 @@ if(isset($_POST['submit'])){
 
     if (mysqli_stmt_execute($prep_stmt1) && mysqli_stmt_execute($prep_stmt2)) {
         echo "Data inserted successfully.";
+        header("Location: index.html");
     } else if(!mysqli_stmt_execute($prep_stmt1) && mysqli_stmt_execute($prep_stmt2)){
         echo "Error: " . $sql1 . "<br>" . mysqli_error($connection);
     }else if(mysqli_stmt_execute($prep_stmt1) && !mysqli_stmt_execute($prep_stmt2)){
