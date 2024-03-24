@@ -1,31 +1,50 @@
 <?php
-require 'connect.php';
+// VERIFY FORM SUBMISSION
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-$section = 0;
-$userid = 0;
-$title = @$_POST['title'];
-$content = @$_POST['content'];
-$parent_postid = -1;
-if(isset($_POST['submit'])){
-    echo $title . ", " . $content;
+    if (isset($_POST['sectionid']) && isset($_POST['title']) && isset($_POST['content']) && isset($_FILES['image'])) {
+        require_once 'connect.php';
 
-    //create thread object first.
-    $sql1 = "INSERT INTO thread (sectionid, userid, title, content) VALUES (?,?,?,?);";
-    $prep_stmt1 = mysqli_prepare($connection, $sql1);
-    mysqli_stmt_bind_param($prep_stmt1, "iiss", $section, $userid, $title, $content);
+    
+        $preparedStmt = $connection->prepare("INSERT INTO thread (sectionid, userid, title, content, ttime, threadImage) VALUES (?, ?, ?, ?, ?, ?)");
+        $preparedStmt->bind_param("iissss", $sectionid, $userid, $title, $content, $ttime, $threadImage);
 
-    //create post object second - use threadid in post object..
-    $sql2 = "INSERT INTO post (userid, title, content, parent_postid) VALUES (?,?,?,?);";
-    $prep_stmt2 = mysqli_prepare($connection, $sql2);
-    mysqli_stmt_bind_param($prep_stmt2, "issi", $userid, $title, $content, $parent_postid);
+        // THREAD PARAMETERS
 
+        $sectionid = $_POST['sectionid']; 
+        $userid = 1; // TEST USER ID
+        $title = $_POST['title'];
+        $content = $_POST['content'];
+        $ttime = date('Y-m-d'); 
+        $threadImage = ''; 
 
-    if (mysqli_stmt_execute($prep_stmt1) && mysqli_stmt_execute($prep_stmt2)) {
-        echo "Data inserted successfully.";
-        header("Location: index.html");
-    } else if(!mysqli_stmt_execute($prep_stmt1) && mysqli_stmt_execute($prep_stmt2)){
-        echo "Error: " . $sql1 . "<br>" . mysqli_error($connection);
-    }else if(mysqli_stmt_execute($prep_stmt1) && !mysqli_stmt_execute($prep_stmt2)){
-        echo "Error: " . $sql2 . "<br>" . mysqli_error($connection);
+        // UPLOADING IMAGE TO thread_images/
+
+        if ($_FILES['image']['error'] == UPLOAD_ERR_OK) {
+            $direc = 'thread_images/';
+            $file = $direc . basename($_FILES['image']['name']);
+            if (move_uploaded_file($_FILES['image']['tmp_name'], $file)) {
+                $threadImage = $file;
+            } else {
+                echo "Failed to upload image.";
+                exit;
+            }
+        }
+
+        // REDIRECT TO INDEX.PHP TO SEE NEW POST 
+        if ($preparedStmt->execute()) {
+            header("Location: index.php");
+            exit; 
+        } else {
+            echo "Error creating thread: " . $preparedStmt->error;
+        }
+        
+        $preparedStmt->close();
+        $connection->close();
+    } else {
+        echo "All fields are required.";
     }
+} else {
+    echo "Invalid request method.";
 }
+?>

@@ -2,8 +2,8 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3307
--- Generation Time: Mar 23, 2024 at 11:16 PM
+-- Host: 127.0.0.1
+-- Generation Time: Mar 24, 2024 at 06:10 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -52,6 +52,17 @@ CREATE TABLE `section` (
   `modid` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='sections and their moderators';
 
+--
+-- Dumping data for table `section`
+--
+
+INSERT INTO `section` (`sectionid`, `sname`, `description`, `postcount`, `modid`) VALUES
+(1, 'Basketball', 'Discussion about basketball-related topics', 0, 0),
+(2, 'Football', 'Discussion about football-related topics', 0, 0),
+(3, 'Hockey', 'Discussion about hockey-related topics', 0, 0),
+(4, 'Motorsports', 'Discussion about motorsports-related topics', 0, 0),
+(5, 'Baseball', 'Discussion about baseball-related topics', 0, 0);
+
 -- --------------------------------------------------------
 
 --
@@ -64,8 +75,19 @@ CREATE TABLE `thread` (
   `userid` int(11) NOT NULL,
   `title` varchar(1000) NOT NULL,
   `content` varchar(9999) NOT NULL,
-  `ttime` date NOT NULL DEFAULT current_timestamp()
+  `ttime` date NOT NULL DEFAULT current_timestamp(),
+  `threadImage` varchar(255) DEFAULT NULL,
+  `likes` int(11) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='thread is the initial post';
+
+--
+-- Dumping data for table `thread`
+--
+
+INSERT INTO `thread` (`threadid`, `sectionid`, `userid`, `title`, `content`, `ttime`, `threadImage`, `likes`) VALUES
+(18, 1, 1, 'Toronto Raptors upset the Philadelphia 76ers in East Conference Finals', 'The Toronto Raptors pull off a stunning upset against the Philadelphia 76ers in the Eastern Conference Finals, defying all odds and expectations. With an electrifying display of skill, teamwork, and determination, the Raptors overcome formidable opponents to secure their spot in the NBA Finals. This historic victory sends shockwaves throughout the basketball world and cements the Raptors\' status as true contenders for the championship title.', '2024-03-24', 'thread_images/toronto.jpg', 27),
+(19, 3, 1, 'Exciting Game in the Stanley Cup Finals', 'The Stanley Cup Finals are heating up with an intense battle between two top teams. Fans are on the edge of their seats as the game goes into overtime. Who will emerge victorious and take home the coveted trophy? Join the discussion and share your predictions', '2024-03-24', 'thread_images/stanley.jpg', 0),
+(20, 3, 1, 'Formula 1 Grand Prix: Thrilling Race Weekend', 'The Formula 1 Grand Prix is back with another thrilling race weekend filled with high-speed action and adrenaline-pumping moments. Get ready to witness the world\'\'s top drivers push their limits on the track. Who will emerge victorious and claim the championship title? Share your thoughts and excitement!', '2024-03-24', 'thread_images/f1.jpg', 0);
 
 -- --------------------------------------------------------
 
@@ -88,17 +110,12 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`userid`, `username`, `nickname`, `email`, `pass`, `birthday`) VALUES
 (1, 'test1', '0', 'test1@gmail.com', 'test1', '2024-03-08'),
-(2, 'test1', '0', 'test1@gmail.com', 'test1', '2024-03-21');
+(2, 'test1', '0', 'test1@gmail.com', 'test1', '2024-03-21'),
+(3, 'fanpitAdmin', '0', 'test@gmail.com', 'admin123.', '2024-03-29');
 
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `post`
---
-ALTER TABLE `post`
-  ADD PRIMARY KEY (`postid`);
 
 --
 -- Indexes for table `section`
@@ -123,28 +140,22 @@ ALTER TABLE `user`
 --
 
 --
--- AUTO_INCREMENT for table `post`
---
-ALTER TABLE `post`
-  MODIFY `postid` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `section`
 --
 ALTER TABLE `section`
-  MODIFY `sectionid` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `sectionid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `thread`
 --
 ALTER TABLE `thread`
-  MODIFY `threadid` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `threadid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
