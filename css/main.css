@@ -41,6 +41,15 @@
   align-items: center;
 }
 
+.main-post-card {
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.main-post-card:hover {
+  transform: translateY(-5px);
+}
+
 .main-posts {
   margin: 20px auto; 
   display: flex;
@@ -62,6 +71,20 @@
 
 .post-icon {
   background-image: url('../icons/post.png'); 
+}
+
+.view-post{
+  background-color: #212529;
+  border-color:#212529;
+  width:100%;
+  font-weight:500;
+}
+
+.view-post:hover{
+  background-color: #fff;
+  color:#212529;
+  font-weight:500;
+  border-color:#fff;
 }
 
 .post-button{
