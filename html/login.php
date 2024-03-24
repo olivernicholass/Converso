@@ -23,7 +23,7 @@
                     <label for="user" class="label-user">Username</label>
                 </div>
                 <div class="input-field">
-                    <input type="text" name="password" id="pass" class="input-box" placeholder="" required/>
+                    <input type="password" name="password" id="pass" class="input-box" placeholder="" required/>
                     <label for="pass" class="label-pass">Password</label>
                 </div>
                 <div class="remember-forgot">
@@ -39,13 +39,7 @@
                     <input type="submit" value="Login" name="submit"/>
                 </div>
                 <div class="register">
-                    <span>Don't have an account? <a href="#"> Register</a></span>
-                </div>
-                <div class="error">
-                    <?php if(empty($login_err) == false ) {
-                                echo $login_err;
-                            }
-                     ?>
+                    <span>Don't have an account? <a href="register.php"> Register</a></span>
                 </div>
             </div>
         </div>
@@ -87,7 +81,7 @@
 
                     header("Location: index.php");
                 } else {
-                    $login_err = "Invalid username or password.";
+                    $login_err = "Invalid username or password";
                 }
             } else {
                 $login_err = "Invalid username or password.";
@@ -95,5 +89,6 @@
         }
     }
 ?>
+
 
 
