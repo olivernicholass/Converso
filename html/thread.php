@@ -1,24 +1,3 @@
-<?php
-require 'connect.php';
-
-//Get Thread URL - for now, set to 0 for sample
-//$thread_id = isset($_GET['thread_id']) ? $_GET['thread_id'] : null;
-$threadid = 7;
-
-$sql_thread = "SELECT * FROM thread WHERE threadid = ?";
-$prep_stmt = mysqli_prepare($connection, $sql_thread);
-mysqli_stmt_bind_param($prep_stmt, "i", $threadid);
-mysqli_stmt_execute($prep_stmt);
-$result_thread = mysqli_stmt_get_result($prep_stmt);
-$thread = mysqli_fetch_assoc($result_thread);
-
-
-if ($thread) {
-    // Output thread details
-    echo "<h1>{$thread['title']}</h1>";
-    echo "<p>{$thread['content']}</p>";
-}
-?>
 <!DOCTYPE html>
 <html>
 
@@ -32,24 +11,44 @@ if ($thread) {
 </head>
 
 <body>
-    <div class="container">
+<div class="container">
+    <?php
+    require 'connect.php';
+
+    // Dynamically display correct thread based on threadId
+    // We get our thread.php?thread_id="Unique Thread ID" 
+    
+    $threadId = isset($_GET['thread_id']) ? $_GET['thread_id'] : null;
+
+    $sql = "SELECT thread.*, section.sname, thread.likes 
+                    FROM thread 
+                    INNER JOIN section ON thread.sectionid = section.sectionid
+                    WHERE thread.threadid = ?";
+                    
+    $preparedStmt = mysqli_prepare($connection, $sql);
+    mysqli_stmt_bind_param($preparedStmt, "i", $threadId);
+    mysqli_stmt_execute($preparedStmt);
+    $result = mysqli_stmt_get_result($preparedStmt);
+    $thread = mysqli_fetch_assoc($result);
+
+    if ($thread) {
+        ?>
         <div class="card mb-4 main-post-card">
             <div class="user-info">
-                <img src="/images/user3.png" class="user-profile">
+                <img src="../images/user2.png" class="user-profile">
                 <p>
                     u/<?php echo "USERNAME VARIABLE GOES HERE"; ?>
                 </p>
             </div>
-
             <div class="card-body">
-                <h5 class="cr-light" style="font-size: 12px;">c/<?php echo "CATEGORY NAME GOES HERE"; ?></h5>
+                <h5 class="cr-light" style="font-size: 12px;">c/<?php echo $thread['sname']; ?></h5>
                 <h5 class="card-title"><?php echo $thread['title']; ?></h5>
                 <p class="card-text"><?php echo $thread['content']; ?></p>
             </div>
-            <img src="<?php echo $main_post_image; ?>" class="card-img-top" alt="Image Description">
+            <img src="<?php echo $thread['threadImage']; ?>" class="card-img-top" alt="Image Description">
 
             <div class="post-buttons">
-                <button class="like-button">
+                <button class="like-button" onclick="likeThread(<?php echo $thread['threadid']; ?>)">
                     <img src="../icons/like.png" alt="Like Icon"> Like
                 </button>
                 <button class="comment-button">
@@ -65,7 +64,13 @@ if ($thread) {
                 <button type="submit" class="btn btn-primary">Post</button>
             </div>
         </div>
-    </div>
+    <?php
+    } else {
+        echo "<p>No thread found.</p>";
+    }
+    ?>
+</div>
+
 </body>
 
 </html>
