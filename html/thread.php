@@ -80,6 +80,24 @@
                     ),
                 );
 
+
+                function displayPosts($conn, $thread, $parent_postid = -1, $indent = 0){
+                    $sql = "SELECT * FROM post WHERE threadid = {$thread['threadid']} AND parent_postid = $parent_postid";
+                    $result = $conn->query($sql);
+
+                    if($result->num_rows > 0){
+                        while($post = $result->fetch_assoc()){
+                            echo '<div style="margin-left: ' . ($indent * 20) . 'px; border: 1px solid #ccc; padding: 10px; margin-bottom: 10px;">';
+                            echo '<p>' . $post['content'] . '</p>';
+                            // You can display other details of the post here such as author, date, etc.
+                            echo '</div>';
+                            displayPosts($conn, $post['postid'], $indent + 1); // Recursive call for nested replies
+                        }
+                    }
+                }
+
+                displayPosts($connection, $thread);
+
                 foreach ($comments as $comment) {
                     ?>
                     <div class="comment">
