@@ -51,12 +51,14 @@
                     <button class="like-button" onclick="likeThread(<?php echo $thread['threadid']; ?>)">
                         <img src="../icons/like.png" alt="Like Icon"> Like
                     </button>
-                    <button class="comment-button">
-                        <img src="../icons/comment.png" alt="Comment Icon"> Comment
-                    </button>
+
                     <button class="share-button">
                         <img src="../icons/share.png" alt="Share Icon"> Share
                     </button>
+
+                    <?php
+                    echo '<a href="reply.php?thread_id=' . $threadId . '&parent_postid=-1" class="btn btn-primary view-post">reply</a>';
+                    ?>
                 </div>
             </div>
             
@@ -87,11 +89,17 @@
 
                     if($result->num_rows > 0){
                         while($post = $result->fetch_assoc()){
-                            echo '<div style="margin-left: ' . ($indent * 20) . 'px; border: 1px solid #ccc; padding: 10px; margin-bottom: 10px;">';
-                            echo '<p>' . $post['content'] . '</p>';
-                            // You can display other details of the post here such as author, date, etc.
+                            echo '<div class="comment" style="margin-left: ' . ($indent * 20) . 'px;">';
+                            echo    '<div class="comment-info">';
+                            //echo        '<div class="username">' . $comment['username'] . '</div>';
+                            echo    '</div>';
+                            echo    '</div>';
+                            echo       '<div class="comment-content">';
+                            echo        '<p>' . $post['content'] . '</p>';
+                            echo        '<a href="reply.php?thread_id=' . $thread['threadid'] . '&parent_postid=' . $post['postid'] . '">Reply</a>';
+                            echo    '</div>';
                             echo '</div>';
-                            displayPosts($conn, $post['postid'], $indent + 1); // Recursive call for nested replies
+                            displayPosts($conn, $thread, $post['postid'], $indent + 1); // Recursive call for nested replies
                         }
                     }
                 }

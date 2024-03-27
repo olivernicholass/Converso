@@ -1,5 +1,9 @@
 <?php
 require 'connect.php';
+
+$threadid = isset($_GET['thread_id']) ? $_GET['thread_id'] : '';
+$parent_postid = isset($_GET['parent_postid']) ? $_GET['parent_postid'] : '';
+
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +24,15 @@ require 'connect.php';
     <div class="post-container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
-                <form action="upload.php" method="POST">
+                <form action="upload-post.php" method="POST">
+
+                    <input type="hidden" name="threadid" value="<?php echo $threadid; ?>">
+                    <input type="hidden" name="parent_postid" value="<?php echo $parent_postid; ?>">
+                    
+                    <?php
+                        echo "threadid: " . $threadid;
+                        echo "parent post id: " . $parent_postid
+                    ?>
 
                     <div class="form-group">
                         <label for="description">Post body</label>

@@ -16,6 +16,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $preparedStmt1 = $connection->prepare("INSERT INTO thread (sectionid, userid, title, content, ttime, threadImage) VALUES (?, ?, ?, ?, ?, ?)");
         $preparedStmt1->bind_param("iissss", $sectionid, $userid, $title, $content, $ttime, $threadImage);
 
+        //$preparedStmt2 = $connection->prepare("INSERT INTO post (")
+
         // THREAD PARAMETERS
 
         $sectionid = $_POST['sectionid']; 
