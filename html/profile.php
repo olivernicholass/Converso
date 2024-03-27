@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<?php require "update_user_data.php"; ?>
+  <?php require "update_user_data.php"; ?>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -14,6 +14,7 @@
 </head>
 
 <body>
+
 
     <!-- Navbar -->
  
@@ -35,8 +36,15 @@
                   <img class="icon" src="../icons/usericon.png" alt="User">
               </div>
               <ul class="profile-menu">
-                  <li><a href="login.php">Login</a></li>
-                  <li><a href="register.php">Register</a></li>
+                <?php
+                  if($_SESSION["loggedin"] === true && isset($_SESSION["loggedin"])) {
+                      echo "<li><a href='profile.php'>Profile</a></li>";
+                      echo "<li><a href='logout.php'>Logout</a></li>";
+                  } else {
+                      echo "<li><a href='login.php'>Login</a></li>";
+                      echo "<li><a href='register.php'>Register</a></li>";
+                  }
+                ?>
               </ul>
           </li>
           </ul>
@@ -88,7 +96,7 @@
             <!-- Username/Profile Picture -->
         <div class="profile-container-wrapper">
             <div class="profile-container">
-                <img src="../images/default.png" alt="Profile Picture" class="profile-picture">
+                <img src="<?php echo "../uploads/".$_SESSION["userid"]."-pfp.png"; ?>" alt="Profile Picture" class="profile-picture">
                 <div>
                     <div class="profile-username"><?php echo $_SESSION["nickname"]; ?></div>
                     <div class="profile-subname">f/<?php echo $_SESSION["username"]; ?></div>

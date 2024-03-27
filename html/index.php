@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <?php require "update_user_data.php"; ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Fanpit</title>
@@ -31,8 +32,15 @@
                         <img class="icon" src="../icons/usericon.png" alt="User">
                     </div>
                     <ul class="profile-menu">
-                        <li><a href="#">Login</a></li>
-                        <li><a href="register.php">Register</a></li>
+                        <?php
+                            if($_SESSION["loggedin"] === true && isset($_SESSION["loggedin"])) {
+                                echo "<li><a href='profile.php'>Profile</a></li>";
+                                echo "<li><a href='logout.php'>Logout</a></li>";
+                            } else {
+                                echo "<li><a href='login.php'>Login</a></li>";
+                                echo "<li><a href='register.php'>Register</a></li>";
+                            }
+                        ?>
                     </ul>
                 </li>
             </ul>

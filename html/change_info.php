@@ -58,7 +58,11 @@ if(isset($_SESSION["loggedin"])) {
                 $target_file = $target_dir . basename($_FILES["pfp"]["name"]);
                 if (move_uploaded_file($_FILES["pfp"]["tmp_name"], $target_dir.$_FILES["pfp"]['name'])) {
                     echo "The file ". htmlspecialchars( basename( $_FILES["pfp"]["name"])). " has been uploaded.";
-                    rename($target_file, $_SESSION["userid"]."pfp-".basename($_FILES["pfp"]["name"]));
+                    if(file_exists($target_dir . $_SESSION["userid"] . "-pfp.png")) {
+                        unlink($target_dir . $_SESSION["userid"] . "-pfp.png");
+                    }
+                    rename($target_file, $target_dir.$_SESSION["userid"]."-pfp.png");
+                    header("location: edit-profile.php");
                   } else {
                     echo "Sorry, there was an error uploading your file.";
                   }
