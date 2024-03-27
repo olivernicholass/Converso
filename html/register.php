@@ -43,7 +43,7 @@
                         <input type="submit" name="submit" value="Sign Up" />
                     </div>
                     <div class="login">
-                        <span>Already have an account? <a href="#"> Login</a></span>
+                        <span>Already have an account? <a href="login.php"> Login</a></span>
                     </div>
                 </div>
             </div>
@@ -66,7 +66,7 @@ echo $nickname . " ; " . $username . " ; " . $password . " ; " . $email . " ; " 
 $sql = "INSERT INTO user (nickname, username, pass, email, birthday) VALUES (?,?,?,?,?);";
 
 $prep_stmt = mysqli_prepare($connection, $sql);
-mysqli_stmt_bind_param($prep_stmt, "issss", $nickname, $username, $password, $email, $birthday);
+mysqli_stmt_bind_param($prep_stmt, "sssss", $nickname, $username, $password, $email, $birthday);
 if (mysqli_stmt_execute($prep_stmt)) {
     echo "Data inserted successfully.";
 } else {

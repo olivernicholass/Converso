@@ -49,7 +49,7 @@
     
 </html>
 <?php
-    
+if(isset($_POST["submit"])) {   
     session_start();
     $connection = mysqli_connect("localhost", "root", "", "fanpit", 3306);
     if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
@@ -59,35 +59,40 @@
     require "connect.php";
     $field_err = "";
     $login_err = "";
+    $user = $_POST["username"];
+    $pass = $_POST["password"];
+    if(isset($user) && isset($pass)) {
+        $check = mysqli_query($connection, "SELECT * FROM user WHERE username = '".$user."'");
+        $rows = mysqli_num_rows($check);
 
-    if(isset($_POST["submit"])) {
-        $user = $_POST["username"];
-        $pass = $_POST["password"];
-        if(isset($user) && isset($pass)) {
-            $check = mysqli_query($connection, "SELECT * FROM user WHERE username = '".$user."'");
-            $rows = mysqli_num_rows($check);
-
-            if($rows != 0) {
-                while($row = mysqli_fetch_assoc($check)) {
-                    $db_user = $row["username"];
-                    $db_pass = $row["pass"];
-                }
-
-                if($user == $db_user && $pass == $db_pass) {
-                    session_start();
-
-                    $_SESSION["loggedin"] = true;
-                    $_SESSION["username"] = $user;
-
-                    header("Location: index.php");
-                } else {
-                    $login_err = "Invalid username or password";
-                }
-            } else {
-                $login_err = "Invalid username or password.";
+        if($rows != 0) {
+            while($row = mysqli_fetch_assoc($check)) {
+                $db_user = $row["username"];
+                $db_pass = $row["pass"];
             }
+
+            if($user == $db_user && $pass == $db_pass) {
+                session_start();
+                $_SESSION["loggedin"] = true;
+                $getall = mysqli_query($connection, "SELECT * FROM user");
+                while($all = mysqli_fetch_assoc($getall)) {
+                    $_SESSION["nickname"] = $all["nickname"];
+                    $_SESSION["email"] = $all["email"];
+                    $_SESSION["birthday"] = $all["birthday"];
+                }
+                $_SESSION["username"] = $user;
+                $_SESSION["password"] = $pass;
+                
+
+                header("Location: index.php");
+            } else {
+                $login_err = "Invalid username or password";
+            }
+        } else {
+            $login_err = "Invalid username or password.";
         }
     }
+}
 ?>
 
 
