@@ -83,7 +83,9 @@
             </div>
 
             <div class="col-lg-8 main-posts">
+            
             <div class="col-lg-8 main-posts">
+            <a href="post.php" class="btn btn-primary view-post" style="margin: 15px;">share your moment</a>
     <?php
     require 'connect.php';
 

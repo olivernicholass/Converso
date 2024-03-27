@@ -1,4 +1,11 @@
 <?php
+/*
+  - upload thread uploads a POST and a THREAD.
+  - on the main page, THREADS are displayed,
+    but in thread.php, all items displayed are POSTS.
+    This is for how the logic works for replies.
+*/
+
 // VERIFY FORM SUBMISSION
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -6,8 +13,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         require_once 'connect.php';
 
     
-        $preparedStmt = $connection->prepare("INSERT INTO thread (sectionid, userid, title, content, ttime, threadImage) VALUES (?, ?, ?, ?, ?, ?)");
-        $preparedStmt->bind_param("iissss", $sectionid, $userid, $title, $content, $ttime, $threadImage);
+        $preparedStmt1 = $connection->prepare("INSERT INTO thread (sectionid, userid, title, content, ttime, threadImage) VALUES (?, ?, ?, ?, ?, ?)");
+        $preparedStmt1->bind_param("iissss", $sectionid, $userid, $title, $content, $ttime, $threadImage);
+
+        //$preparedStmt2 = $connection->prepare("INSERT INTO post (")
 
         // THREAD PARAMETERS
 
