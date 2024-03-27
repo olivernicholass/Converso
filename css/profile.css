@@ -1,4 +1,8 @@
 
+body {
+    background: #212529;
+}
+
 .profile-container-wrapper {
     display: flex;
     flex-direction: column;
@@ -84,6 +88,13 @@
     font-size: 15px;
     padding: 10px;
     font-family: 'cr-light', sans-serif;
+}
+
+a {
+    font-family: 'cr-light', sans-serif;
+    font-size: 15px;
+    text-decoration: none;
+    color: #212529;
 }
 
 .profile-section {

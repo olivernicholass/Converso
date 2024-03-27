@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+<?php require "update_user_data.php"; ?>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -34,8 +35,8 @@
                   <img class="icon" src="../icons/usericon.png" alt="User">
               </div>
               <ul class="profile-menu">
-                  <li><a href="#">Login</a></li>
-                  <li><a href="#">Register</a></li>
+                  <li><a href="login.php">Login</a></li>
+                  <li><a href="register.php">Register</a></li>
               </ul>
           </li>
           </ul>
@@ -89,8 +90,8 @@
             <div class="profile-container">
                 <img src="../images/default.png" alt="Profile Picture" class="profile-picture">
                 <div>
-                    <div class="profile-username">fanpitADMINISTRATOR</div>
-                    <div class="profile-subname">f/fanpitADMINISTRATOR</div>
+                    <div class="profile-username"><?php echo $_SESSION["nickname"]; ?></div>
+                    <div class="profile-subname">f/<?php echo $_SESSION["username"]; ?></div>
                 </div>
             </div>
 
@@ -101,6 +102,7 @@
                 <button class="profile-section">Comments</button>
                 <button class="profile-section">Liked</button>
                 <button class="profile-section">Disliked</button>
+                <button class="profile-section"><a href="edit-profile.php">Edit Profile</a></button>
             </div>
 
             <!-- Create Post Button -->

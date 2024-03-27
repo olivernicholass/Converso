@@ -152,6 +152,7 @@
   position: fixed;
   left: 0;
   height: 100%;
+  box-shadow: 5px 0px 10px rgb(17, 17, 17);
 }
 
 @media (max-width: 992px) {
