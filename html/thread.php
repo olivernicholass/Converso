@@ -92,7 +92,7 @@
                             echo '<div class="comment" style="margin-left: ' . ($indent * 20) . 'px;">';
                             echo    '<div class="comment-info">';
                             //echo        '<div class="username">' . $comment['username'] . '</div>';
-                            echo    '</div>';
+                            //echo    '</div>';
                             echo    '</div>';
                             echo       '<div class="comment-content">';
                             echo        '<p>' . $post['content'] . '</p>';
