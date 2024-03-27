@@ -1,0 +1,301 @@
+body {
+    background: #212529;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; 
+    min-height: 80vh;
+    margin-top: 20px;
+    width: 60%;
+    background-color: #E9ECEF;
+    padding: 20px;
+    margin: 0 auto; 
+    margin-top: 2em;
+    border-radius: 15px;
+    border: 10px solid #adb0b3;
+    position: absolute;
+}
+
+.profile-username {
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 20px; 
+    margin-left: 10px;
+    font-family: 'cr-bold', sans-serif;
+    color: #F8F9FA;
+}
+
+.profile-subname {
+    margin-left: 10px;
+    font-family: 'cr-light', sans-serif;
+    color: #F8F9FA;
+}
+
+.profile-picture {
+    width: 125px;
+    height: 125px; 
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 2px solid;
+    object-fit: cover;
+    padding: 5px;
+    margin-top: 20px; 
+    border: 2px solid;
+    border-color: #E9ECEF
+}
+
+.top {
+    background: #212529;
+    padding-bottom: 1em;
+}
+
+.back-container {
+    display: flex;
+    justify-content: end;
+    align-items: start;
+    margin-top: 1em;
+}
+
+#change-user-form, #change-nickname-form, #change-email-form, #change-pass-form, #change-picture-form {
+    display: none;
+}
+
+#pfp-input {
+    padding: 2px;
+}
+
+
+.main {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    box-shadow: 0 0 0 99999px rgba(0, 0, 0, .8);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+    margin-top: 20px;
+    width: 30%;
+    background-color: #E9ECEF;
+    padding: 5px 20px 20px 20px;
+    margin: 0 auto; 
+    margin-top: 5em;
+    border-radius: 15px;
+    border: 10px solid #adb0b3;
+    top: 0px;
+    z-index: 10;
+    position: absolute;
+}
+
+.change {
+    color: black;
+    background-color: white;
+    border: 3px solid #adb0b3;
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 1em;
+}
+
+.change-button {
+    color: black;
+    background-color: white;
+    border: 3px solid #212529;
+    border-radius: 10px;
+    margin-bottom: 1em;
+}
+
+.change-button:hover {
+    background: #212529;
+    color: white;
+}
+
+.close-icon {
+    width: 10px;
+    height: 10px;
+}
+
+.back-button {
+    background: none;
+    border: none;
+    width: 25px;
+    height: 25px;
+}
+
+.label {
+    font: Arial;
+    font-weight: 700;
+}
+
+.value {
+    font: Arial;
+}
+
+.second {
+    margin-top: 2em;
+}
+
+
+
+
+
+
+/*NAVBAR*/
+.navbar {
+    font-family: 'cr-light', sans-serif;
+    background-color: #F8F9FA !important;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px; 
+  }
+  
+  .form-outline input::placeholder {
+    font-family: 'cr-light', sans-serif;
+  }
+  
+  .navbar-toggler-icon {
+    background-color: #ffffff;
+  }
+  
+  .navbar-toggler {
+    padding: 0.25rem 0.75rem;
+  }
+  
+  .profile {
+    position: relative;
+  }
+  
+  .profile-menu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 5px);
+    right: 0;
+    background-color: #F8F9FA;
+    border: 1px solid #ced4da;
+    padding: 5px 0;
+    min-width: 120px;
+    padding:10px;
+    border-radius: 8px;
+  }
+  
+  .profile-menu li {
+    list-style: none;
+  }
+  
+  .profile-menu a{
+    color:#212529;
+  }
+  
+  .profile-icon:hover + .profile-menu,
+  .profile-menu:hover {
+    display: block;
+  }
+  
+  
+  .form-control {
+    font-family: 'cr-light', sans-serif;
+    width: 35%;
+    margin: 0 auto; 
+  }
+  
+  .custom-center {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-nav .nav-link img {
+    width: 40px;
+    height: 40px;
+    border-radius: 0%;
+    margin: 5px;
+    transition: filter 0.3s ease-in-out;
+  }
+  
+  .navbar-nav .nav-link img:hover {
+    filter: #CED4DA;
+  }
+  
+  .fanpit-logo {
+    max-width: 50%;
+    height: auto;
+    margin-left: 10px;
+    display: block;
+  }
+  
+  .navbar-brand {
+    padding: 0; 
+    margin: 0; 
+  }
+  
+  .nav-item{
+  transition: background-color 0.3s, transform 0.3s; 
+  }
+  
+  .nav-item:hover{
+    transform: scale(1.05); /
+  }
+  
+  
+  .navbar,
+  .navbar-form,
+  .navbar-toggler,
+  .navbar-nav,
+  .nav-link,
+  .navbar-toggler-icon,
+  .form-outline {
+    font-family: 'cr-regular', sans-serif;
+  }
+  
+  .card-text {
+    font-family: 'cr-light', sans-serif;
+  }
+  
+  @font-face {
+    font-family: 'cr-light';
+    src: url('../fonts/CircularStd-Light.otf') format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'cr-regular';
+    src: url('../fonts/CircularStd-Medium.otf') format('truetype');
+  }
+/*END NAVBAR*/
+/*SIDEBAR*/
+.button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 5px;
+    text-align: left;
+    background-color: #dee2e6;
+    color: #343a40;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; 
+  }
+
+  .button:hover {
+    background-color: #ced4da;
+    color: #212529;
+    transform: scale(1.05); 
+  }
+
+  .custom-sidebar button {
+    border-radius: 5px;
+  }
+
+  .custom-sidebar {
+    background-color: #212529;
+    color: #f8f9fa;
+    width: 250px;
+    padding: 20px;
+    transition: width 0.3s;
+    position: fixed;
+    left: 0;
+    height: 100%;
+  }
+  /*END SIDEBAR*/  

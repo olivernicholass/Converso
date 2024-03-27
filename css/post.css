@@ -1,36 +1,98 @@
 body {
-    background-color: #212529;
+    background-color: #c7c7c7;
 }
 
 .post-container{
-    background-color: #e8f3ff;
+    background-color: #ffffff;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 1em;
-    margin-top: 1em;
-    padding: 10px;
-    border-radius: 2em;
-    max-width: 50em;
+    margin-top: 15vh;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 1em;
+    max-width: 40em;
+    border: 10px solid #212529;
+    box-shadow: 10px 10px 10px rgb(114, 114, 114);
 }
 #text-body{
     resize: vertical;
     max-height: 500px;
 }
-.title-container{
+/*sidebar*/
+.button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 5px;
+    text-align: left;
+    background-color: #dee2e6;
+    color: #343a40;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; 
+  }
+
+  .button:hover {
+    background-color: #ced4da;
+    color: #212529;
+    transform: scale(1.05); 
+  }
+
+  .custom-sidebar button {
+    border-radius: 5px;
+  }
+
+  .custom-sidebar {
     background-color: #212529;
-    color: #F8F9FA;
+    color: #f8f9fa;
+    width: 250px;
+    padding: 20px;
+    transition: width 0.3s;
+    position: fixed;
+    left: 0;
+    height: 100%;
+  }
+
+
+.title-container{
+    background-color: #c7c7c7;
+    color: #212529;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
     margin-top: 1em;
     text-align: center;
     max-width: 50em;
 }
 
-.form-control{
-    color: #f8f9fa;
-    background-color: #212529;
+h3 {
+    font-weight: 700;
 }
+
+hr {
+    border-color:#212529;
+    margin-top: 0px;
+    margin-bottom: 1em;
+}
+
+.logo {
+    width: 139px;
+    height: 59px;
+}
+
+.btn {
+    border: none;
+}
+
+.post{
+    color: black;
+    background-color: white;
+    border: 3px solid #212529;
+    width: 100%;
+    margin: 0;
+}
+
 .image-input{
     display: block;
     color: #F8F9FA;
@@ -48,9 +110,9 @@ body {
     margin-top: 10px;
     font-family:'cr-regulat', sans-serif;
     outline: 0;
-    background: #212529;
-    color: #f8f9fa;
-    border: 1px solid crimson;
+    background: white;
+    color: black;
+    border: 3px solid #212529;
     padding: 4px;
     border-radius: 9px;
 }
