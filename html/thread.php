@@ -84,14 +84,14 @@
 
 
                 function displayPosts($conn, $thread, $parent_postid = -1, $indent = 0){
-                    $sql = "SELECT * FROM post WHERE threadid = {$thread['threadid']} AND parent_postid = $parent_postid";
+                    $sql = "SELECT * FROM post JOIN user ON post.userid = user.userid WHERE threadid = {$thread['threadid']} AND parent_postid = $parent_postid";
                     $result = $conn->query($sql);
 
                     if($result->num_rows > 0){
                         while($post = $result->fetch_assoc()){
                             echo '<div class="comment" style="margin-left: ' . ($indent * 20) . 'px;">';
                             echo    '<div class="comment-info">';
-                            //echo        '<div class="username">' . $comment['username'] . '</div>';
+                            //echo        '<div class="username">' . ($thread['username']) . '</div>';
                             //echo    '</div>';
                             echo    '</div>';
                             echo       '<div class="comment-content">';
