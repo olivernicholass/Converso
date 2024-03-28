@@ -14,6 +14,7 @@
     <div class="container">
         <a href="index.php" class="btn-home">Return Home</a>
         <?php
+        session_start();
         require 'connect.php';
 
         $threadId = isset($_GET['thread_id']) ? $_GET['thread_id'] : null;
