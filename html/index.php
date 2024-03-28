@@ -102,7 +102,11 @@ if (!isset($_SESSION["loggedin"])) {
             <?php
                         echo "Hello, <b>&nbsp;" . @$_SESSION['username'] . "&nbsp;</b> Welcome to Fanpit!";
             ?>
+            <?php if ($_SESSION["loggedin"] === true && isset($_SESSION["loggedin"])): ?>
             <a href="post.php" class="btn btn-primary view-post" style="margin: 15px;">share your moment</a>
+            <?php else: ?>
+            <a href="login.php" class="btn btn-primary view-post" style="margin: 15px;">share your moment</a>
+            <?php endif; ?>
     <?php
     require 'connect.php';
 

@@ -59,7 +59,13 @@
                     </button>
 
                     <?php
-                    echo '<a href="reply.php?thread_id=' . $threadId . '&parent_postid=-1" class="btn btn-primary view-post">reply</a>';
+                    
+                    if (@$_SESSION["loggedin"] === true && isset($_SESSION["loggedin"])){
+                        echo '<a href="reply.php?thread_id=' . $threadId . '&parent_postid=-1" class="btn btn-primary view-post">reply</a>';
+                    }
+                    else{
+                        echo '<a href="login.php" class="btn btn-primary">Reply</a>';
+                    }
                     ?>
                 </div>
             </div>
@@ -82,7 +88,13 @@
                             echo    '</div>';
                             echo       '<div class="comment-content">';
                             echo        '<p>' . $post['content'] . '</p>';
-                            echo        '<a href="reply.php?thread_id=' . $thread['threadid'] . '&parent_postid=' . $post['postid'] . '" class="btn-reply">Reply</a>';
+                            if (@$_SESSION["loggedin"] === true && isset($_SESSION["loggedin"])){
+                                echo        '<a href="reply.php?thread_id=' . $thread['threadid'] . '&parent_postid=' . $post['postid'] . '" class="btn-reply">Reply</a>';
+                            }
+                            else{
+                                echo        '<a href="login.php" class="btn-reply">Reply</a>';
+                            }
+                                
                             echo    '</div>';
                             echo '</div>';
                             displayPosts($conn, $thread, $post['postid'], $indent + 1); // Recursive call for nested replies
