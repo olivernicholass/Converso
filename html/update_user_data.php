@@ -9,7 +9,6 @@
             $_SESSION["birthday"] = $all["birthday"];
             $_SESSION["username"] = $all["username"];;
             $_SESSION["password"] = $all["pass"];
-            $_SESSION["pfp"] = $all["pfp"];
             $_SESSION["userid"] = $all["userid"];
         }
     

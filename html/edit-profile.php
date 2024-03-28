@@ -34,8 +34,15 @@
                   <img class="icon" src="../icons/usericon.png" alt="User">
               </div>
               <ul class="profile-menu">
-                  <li><a href="login.php">Login</a></li>
-                  <li><a href="register.php">Register</a></li>
+                    <?php
+                            if($_SESSION["loggedin"] === true && isset($_SESSION["loggedin"])) {
+                                echo "<li><a href='profile.php'>Profile</a></li>";
+                                echo "<li><a href='logout.php'>Logout</a></li>";
+                            } else {
+                                echo "<li><a href='login.php'>Login</a></li>";
+                                echo "<li><a href='register.php'>Register</a></li>";
+                            }
+                    ?>
               </ul>
           </li>
           </ul>
@@ -197,14 +204,15 @@
         <div class="wrapper">
             <div class="top row w-100 rounded">
                 <div class="col-md-6">
-                    <img src="../images/default.png" alt="Profile Picture" class="profile-picture">
+                    <img src="<?php echo "../uploads/".$_SESSION["userid"]."-pfp.png"; ?>" alt="Profile Picture" class="profile-picture">
                     <button class="open-button" onclick="openPictureForm()" style="position: relative; left: -5%; top: 30%; bottom: 0px; background: none; border: none; height: 25px; width: 25px; padding: 5px;">
                     <img class="edit_icon" src="../images/edit_square_white.png" width="25" height="25"/>
                     </button>
                     <div class="profile-username"><?php echo $_SESSION["nickname"]; ?></div>
                     <div class="profile-subname">f/<?php echo $_SESSION["username"]; ?></div>
                 </div>
-                <div class="col-md-6"><div class="back-container"><button class="back"><a href="profile.php">back</a></button></div></div>
+                <div class="col-md-6"><div class="back-container"><a href="profile.php"><button class="back-button d-flex justify-content-center align-items-center" style="background: none; border: none; height: 25px; width: 25px; padding: 5px;">
+                    <img class="close_icon" src="../images/close_white.png" width="25" height="25"/></button></a></button></div></div>
             </div> 
             <div class="second row w-100">
                 <div class="col-md-2">
