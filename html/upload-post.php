@@ -1,12 +1,11 @@
 <?php
 require 'connect.php';
 
-$userid = 0;
+$userid = @$_SESSION['userid'];
 $threadid = @$_POST['threadid'];
 $content = @$_POST['content'];
 $parent_postid = @$_POST['parent_postid'];
 if(isset($_POST['submit'])){
-    echo $title . ", " . $content;
 
     //create post object second - use threadid in post object..
     $sql = "INSERT INTO post (threadid, userid, content, parent_postid) VALUES (?,?,?,?);";

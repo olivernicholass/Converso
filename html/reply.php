@@ -31,7 +31,8 @@ $parent_postid = isset($_GET['parent_postid']) ? $_GET['parent_postid'] : '';
                     
                     <?php
                         echo "threadid: " . $threadid;
-                        echo "parent post id: " . $parent_postid
+                        echo "parent post id: " . $parent_postid;
+                        echo "logged in as: " . @$_SESSION['userid'];
                     ?>
 
                     <div class="form-group">

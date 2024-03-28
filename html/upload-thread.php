@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // THREAD PARAMETERS
 
         $sectionid = $_POST['sectionid']; 
-        $userid = 1; // TEST USER ID
+        $userid = $_SESSION['userid'];
         $title = $_POST['title'];
         $content = $_POST['content'];
         $ttime = date('Y-m-d'); 

@@ -1,3 +1,9 @@
+<?php
+if (!isset($_SESSION["loggedin"])) {
+    header('login.php');
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -84,6 +90,9 @@
             </div>
             <div class="col-md-12">
                 <form action="upload-thread.php" method="POST" enctype="multipart/form-data">
+
+                    <input type="hidden" name="userid" value="<?php echo @$_SESSION['userid']; ?>">
+
                     <div class="form-group">
                         <label for="sport-dropdown">Select a sport</label>
                         <select name="sectionid" id="sport-dropdown" class="post form-control">
