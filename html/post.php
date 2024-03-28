@@ -1,20 +1,22 @@
 <?php
+session_start();
 if (!isset($_SESSION["loggedin"])) {
-    header('login.php');
-    exit();
+    $_SESSION["loggedin"] = false;
 }
 ?>
 <!DOCTYPE html>
 <html>
+
 <head>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../css/navbar.css"/>
-    <link rel="stylesheet" type="text/css" href="../css/post.css"/>
-    
+    <link rel="stylesheet" type="text/css" href="../css/navbar.css" />
+    <link rel="stylesheet" type="text/css" href="../css/post.css" />
+
     <title>Create Post</title>
 </head>
+
 <body>
-<nav class="navbar sticky-top navbar-expand navbar-dark bg-dark">
+    <nav class="navbar sticky-top navbar-expand navbar-dark bg-dark">
         <a class="navbar-brand" href="index.php"><img class="fanpit-logo" src="../images/fanpit.png" alt="fanpit"></a>
 
         <input class="form-control" type="search" placeholder="Search for posts..." aria-label="Search">
@@ -43,13 +45,13 @@ if (!isset($_SESSION["loggedin"])) {
         <div class="col-lg-4 custom-sidebar">
             <div class="button-section">
                 <button class="button">
-                <img src="../icons/home2.png" alt="Home" style="width: 25px; height: 25px; color:black; margin-right: 5px;"/> Home
+                    <img src="../icons/home2.png" alt="Home" style="width: 25px; height: 25px; color:black; margin-right: 5px;" /> Home
                 </button>
                 <button class="button">
-                <img src="../icons/popular.png" alt="Popular" style="width: 25px; height: 25px; color:black; margin-right: 5px;"/> Popular
+                    <img src="../icons/popular.png" alt="Popular" style="width: 25px; height: 25px; color:black; margin-right: 5px;" /> Popular
                 </button>
                 <button class="button">
-                <img src="../icons/suggested.png" alt="All" style="width: 25px; height: 25px; color:black; margin-right: 5px;"/> Suggested
+                    <img src="../icons/suggested.png" alt="All" style="width: 25px; height: 25px; color:black; margin-right: 5px;" /> Suggested
                 </button>
             </div>
             <div class="button-section">
@@ -62,27 +64,28 @@ if (!isset($_SESSION["loggedin"])) {
             <div class="button-section">
                 <h2 class="cr-light" style="font-size: 12px;">COMMUNITIES</h2>
                 <button class="button">
-                <img src="../icons/community.png" alt="Community" style="width: 25px; height: 25px; color:black; margin-right: 5px;"/> Join a Community!
+                    <img src="../icons/community.png" alt="Community" style="width: 25px; height: 25px; color:black; margin-right: 5px;" /> Join a Community!
                 </button>
             </div>
 
             <div class="button-section">
                 <h2 class="cr-light" style="font-size: 12px;">RESOURCES</h2>
                 <button class="button">
-                <img src="../icons/about.png" alt="About" style="width: 25px; height: 25px; color:black; margin-right: 5px;"/> About Fanpit
+                    <img src="../icons/about.png" alt="About" style="width: 25px; height: 25px; color:black; margin-right: 5px;" /> About Fanpit
                 </button>
                 <button class="button">
-                <img src="../icons/help.png" alt="Help" style="width: 25px; height: 25px; color:black; margin-right: 5px;"/> Help
+                    <img src="../icons/help.png" alt="Help" style="width: 25px; height: 25px; color:black; margin-right: 5px;" /> Help
                 </button>
                 <button class="button">
-                <img src="../icons/contact.png" alt="Contact" style="width: 25px; height: 25px; color:black; margin-right: 5px;"/> Contact Information
+                    <img src="../icons/contact.png" alt="Contact" style="width: 25px; height: 25px; color:black; margin-right: 5px;" /> Contact Information
                 </button>
             </div>
         </div>
     </div>
+
     <div class="post-container">
         <div class="row">
-        <div class="col-md-5">
+            <div class="col-md-5">
                 <h3>Create Post</h3>
             </div>
             <div class="col-md-12">
@@ -92,6 +95,10 @@ if (!isset($_SESSION["loggedin"])) {
                 <form action="upload-thread.php" method="POST" enctype="multipart/form-data">
 
                     <input type="hidden" name="userid" value="<?php echo @$_SESSION['userid']; ?>">
+
+                    <?php
+                    echo "logged in as: " . @$_SESSION['username'];
+                    ?>
 
                     <div class="form-group">
                         <label for="sport-dropdown">Select a sport</label>
@@ -107,7 +114,7 @@ if (!isset($_SESSION["loggedin"])) {
                             );
 
                             foreach ($sportsSections as $sport => $sectionID) {
-                                echo '<option value="' . $sectionID . '">' . $sport . '</option>';
+                                echo '<option value="' . $sectionID . '" name="sectionid">' . $sport . '</option>';
                             }
                             ?>
                         </select>
@@ -122,15 +129,17 @@ if (!isset($_SESSION["loggedin"])) {
                     </div>
                     <div class="form-group">
                         <label>Add Image</label>
-                        <input type="file" name="image" class="post-file form-control-file" accept="image/*" required>
+                        <input type="file" name="image" class="post-file form-control-file" accept="image/*">
                     </div>
                     <div class="form-group">
                         <button type="submit" name="submit" class="btn btn-primary" style="background-color: #212529; border: 2px solid steelblue;">Post</button>
-                        <button class="btn btn-default">Back</button>
+                        <a href="index.php" style="color: black; text-decoration: none;">Back</button>
                     </div>
+
                 </form>
             </div>
         </div>
     </div>
 </body>
+
 </html>

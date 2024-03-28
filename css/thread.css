@@ -16,7 +16,27 @@
     margin-left: auto; 
     margin-right: auto; 
 }
-
+.btn-home{
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    color: white;
+    background-color: #212529;
+    margin-top: 10px;
+    padding: 5px;
+    text-decoration: none;
+    border-radius: 6px;
+}
+.btn-reply{
+    background-color: #212529;
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
 .post-buttons {
     display: flex;
     margin-top: 10px;
@@ -25,6 +45,8 @@
 .like-button:hover img {
     content: url('../images/heart.gif');
 }
+
+
 
 .like-button,
 .comment-button,
