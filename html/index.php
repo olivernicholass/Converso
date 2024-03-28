@@ -99,6 +99,9 @@ if (!isset($_SESSION["loggedin"])) {
             <div class="col-lg-8 main-posts">
             
             <div class="col-lg-8 main-posts">
+            <?php
+                        echo "Hello, <b>&nbsp;" . @$_SESSION['username'] . "&nbsp;</b> Welcome to Fanpit!";
+            ?>
             <a href="post.php" class="btn btn-primary view-post" style="margin: 15px;">share your moment</a>
     <?php
     require 'connect.php';

@@ -1,4 +1,5 @@
 <?php
+session_start();
 /*
   - upload thread uploads a POST and a THREAD.
   - on the main page, THREADS are displayed,
@@ -13,15 +14,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         require_once 'connect.php';
 
     
-        $preparedStmt1 = $connection->prepare("INSERT INTO thread (sectionid, userid, title, content, ttime, threadImage) VALUES (?, ?, ?, ?, ?, ?)");
-        $preparedStmt1->bind_param("iissss", $sectionid, $userid, $title, $content, $ttime, $threadImage);
+        $preparedStmt = $connection->prepare("INSERT INTO thread (sectionid, userid, title, content, ttime, threadImage) VALUES (?, ?, ?, ?, ?, ?)");
+        $preparedStmt->bind_param("iissss", $sectionid, $userid, $title, $content, $ttime, $threadImage);
 
         //$preparedStmt2 = $connection->prepare("INSERT INTO post (")
 
         // THREAD PARAMETERS
 
         $sectionid = $_POST['sectionid']; 
-        $userid = $_SESSION['userid'];
+        $userid = @$_SESSION['userid'];
         $title = $_POST['title'];
         $content = $_POST['content'];
         $ttime = date('Y-m-d'); 
