@@ -1,6 +1,5 @@
-<?php 
-        session_start(); 
-        $connection = mysqli_connect("localhost", "root", "", "fanpit", 3306);
+<?php  
+        //$connection = mysqli_connect("localhost", "root", "", "fanpit", 3306);
         require "connect.php";
         $getall = mysqli_query($connection, "SELECT * FROM user");
         while($all = mysqli_fetch_assoc($getall)) {

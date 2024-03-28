@@ -39,7 +39,7 @@
                     <input type="submit" value="Login" name="submit"/>
                 </div>
                 <div class="register">
-                    <span>Don't have an account? <a href="register.php"> Register</a></span>
+                    <span>Don't have an account? <a href="register.php">Register</a> or <a href="index.php">Return Home</a></span>
                 </div>
             </div>
         </div>
@@ -51,12 +51,13 @@
 <?php
 if(isset($_POST["submit"])) {   
     session_start();
-    $connection = mysqli_connect("localhost", "root", "", "fanpit", 3306);
+    //$connection = mysqli_connect("localhost", "root", "", "fanpit", 3306);
+    require "connect.php";
     if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
         header("location: index.php");
         exit;
     }
-    require "connect.php";
+    
     $field_err = "";
     $login_err = "";
     $user = $_POST["username"];
