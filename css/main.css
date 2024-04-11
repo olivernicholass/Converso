@@ -30,8 +30,6 @@
 }
 
 .post {
-  width: 200px;
-  height: 100px;
   background-color: #f0f0f0;
   margin: 10px;
   padding: 10px;
@@ -39,6 +37,18 @@
   border-radius: 10px;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+}
+
+.post-link {
+  text-decoration: none; 
+  color: inherit; 
+  display: block;
+}
+
+.post-link:hover, .post-link:focus {
+  transition: background-color 0.3s, transform 0.3s;
+  transform: scale(1.05); 
 }
 
 .main-post-card {
@@ -63,7 +73,6 @@
   padding: 15px;
   margin-bottom: 20px;
   border-radius: 10px;
-  width: 100%;
 }
 .post-buttons {
   display: flex;
@@ -119,7 +128,7 @@
 .like-button:hover,
 .comment-button:hover,
 .share-button:hover {
-  transform: scale(1.05); /
+  transform: scale(1.05); 
 }
 
 

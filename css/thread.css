@@ -32,9 +32,6 @@
     .custom-sidebar{
       display: none;
     }
-    .main-posts{
-       
-    }
 }
 
 .main-post-card {
@@ -44,10 +41,9 @@
     margin-left: auto; 
     margin-right: auto; 
 }
-.btn-home{
-
-    margin-right: 10px;
-    margin-left: 300px;
+.btn-home {
+    flex: end;
+    right: 25px;
     position: absolute;
     color: white;
     background-color: #212529;
@@ -55,8 +51,8 @@
     padding: 5px;
     text-decoration: none;
     border-radius: 6px;
-
 }
+
 .btn-reply{
     background-color: #212529;
     color: white;

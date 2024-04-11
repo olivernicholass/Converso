@@ -42,10 +42,7 @@ if ($thread) {
     <body>
 
         <?php include '../components/header.php'; ?>
-        <?php include '../components/sidebar.php'; ?>
 
-
-        <a href="index.php" class="btn-home">Return Home</a>
         <div class="container">
 
             
@@ -55,6 +52,7 @@ if ($thread) {
                 <div class="card mb-4 main-post-card">
                     <div class="user-info">
                         <img src="../images/user2.png" class="user-profile">
+                        <a href="index.php" class="btn-home">Return Home</a>
                         <p>
                             u/<?php echo $thread['username']; ?>
                         </p>

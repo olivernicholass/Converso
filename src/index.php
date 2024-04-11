@@ -46,8 +46,8 @@ if (!isset($_SESSION["loggedin"])) {
                     require 'connect.php';
 
                     $sql = "SELECT thread.*, section.sname 
-                            FROM thread 
-                            INNER JOIN section ON thread.sectionid = section.sectionid";
+            FROM thread 
+            INNER JOIN section ON thread.sectionid = section.sectionid";
 
                     $result = $connection->query($sql);
 
@@ -80,24 +80,33 @@ if (!isset($_SESSION["loggedin"])) {
                     ?>
                 </div>
             </div>
+
+            <?php include 'connect.php'; ?>
+
             <div class="col-lg-4 recent-posts">
                 <div class="recent-posts">
                     <h2 class="section-title cr-light" style="font-size: 12px;">RECENT POSTS</h2>
+                    <?php
+                    $sql = "SELECT thread.threadid, thread.title, section.sname 
+                            FROM thread 
+                            JOIN section ON thread.sectionid = section.sectionid
+                            ORDER BY thread.ttime DESC LIMIT 5"; 
 
-                    <div class="post">
-                        <h5 class="post-title">The MVP Race: Top Contenders in the NBA</h5>
-                        <hr class="post-divider">
-                    </div>
+                    $result = $connection->query($sql);
 
-                    <div class="post">
-                        <h5 class="post-title">Soccer's Rising Stars: Young Talents Making an Impact</h5>
-                        <hr class="post-divider">
-                    </div>
-
-                    <div class="post">
-                        <h5 class="post-title">Memorable Moments in Baseball History</h5>
-                        <hr class="post-divider">
-                    </div>
+                    if ($result->num_rows > 0) {
+                        while($row = $result->fetch_assoc()) {
+                            echo '<a href="thread.php?thread_id=' . $row["threadid"] . '" class="post-link">';
+                            echo '<div class="post">';
+                            echo '<h5 class="post-title">' . htmlspecialchars($row["title"], ENT_QUOTES, 'UTF-8') . '</h5>';
+                            echo '<h6 style="font-size: 10px; color: gray;">' . htmlspecialchars($row["sname"], ENT_QUOTES, 'UTF-8') . '</h6>';
+                            echo '</div>';
+                            echo '</a>';
+                        }
+                    } else {
+                        echo "No recent posts";
+                    }
+                    ?>
                 </div>
             </div>
         </div>
