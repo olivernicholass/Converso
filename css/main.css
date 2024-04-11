@@ -143,17 +143,7 @@
   border-radius: 8px; 
 }
 
-.custom-sidebar {
-  background-color: #212529;
-  color: #f8f9fa;
-  width: 250px;
-  padding: 20px;
-  transition: width 0.3s;
-  position: fixed;
-  left: 0;
-  height: 100%;
-  box-shadow: 5px 0px 10px rgb(17, 17, 17);
-}
+
 
 @media (max-width: 992px) {
   .custom-sidebar,
@@ -189,19 +179,6 @@
 
 .section-title {
   text-align: center;
-}
-
-.custom-sidebar button {
-  border-radius: 5px;
-}
-
-.button-section {
-  margin-bottom: 20px;
-}
-
-.button-section h2 {
-  font-size: 16px;
-  margin-bottom: 10px;
 }
 
 .button {
