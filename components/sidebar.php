@@ -27,9 +27,10 @@
 
     <div class="button-section">
         <h2 class="cr-light" style="font-size: 12px;">RESOURCES</h2>
-        <button class="button">
+        <a href="about.html"><button class="button">
             <img src="../icons/about.png" alt="About" style="width: 25px; height: 25px; color:black; margin-right: 5px;" /> About Fanpit
-        </button>
+        </button></a>
+
         <button class="button">
             <img src="../icons/help.png" alt="Help" style="width: 25px; height: 25px; color:black; margin-right: 5px;" /> Help
         </button>

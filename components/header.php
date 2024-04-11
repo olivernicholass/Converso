@@ -1,7 +1,7 @@
 <nav class="navbar sticky-top navbar-expand navbar-dark bg-dark">
     <a class="navbar-brand" href="index.php"><img class="fanpit-logo" src="../images/fanpit.png" alt="fanpit"></a>
 
-    <input class="form-control" type="search" placeholder="Search for posts..." aria-label="Search">
+    <input class="form-control" id="search-bar" type="search" placeholder="Search for posts..." aria-label="Search">
 
     <div class="navbar-collapse">
         <ul class="navbar-nav ms-auto">
