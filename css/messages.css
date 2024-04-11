@@ -8,50 +8,7 @@ html, body {
     padding: 0;
 }
 
-.custom-sidebar {
-    background-color: #212529;
-    color: #f8f9fa;
-    width: 100px;
-    padding: 20px;
-    transition: width 0.3s;
-    position: fixed;
-    left: 0;
-    height: 100%;
-    margin-left:10px;
-  }
-  
-  .button-section {
-    margin-bottom: 20px;
-  }
-  
-  .button-section h2 {
-    font-size: 16px;
-    margin-bottom: 10px;
-  }
-  
-  .button {
-    display: block;
-    padding: 10px;
-    margin-bottom: 15px;
-    text-align: center;
-    background-color: #dee2e6;
-    color: #343a40;
-    margin-left:5px;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s; 
-  }
-  
 
-  .button:hover {
-    background-color: #ced4da;
-    color: #212529;
-    transform: scale(1.05); 
-  }
-  
-  .custom-sidebar button {
-    border-radius: 5px;
-  }
   
 
 .username{
@@ -92,7 +49,7 @@ html, body {
     display: flex;
     flex-direction: row;
     height: 100%;
-    margin-left: 6%; 
+    margin-left: 250px; 
 }
 
 .people-container {

@@ -1,3 +1,9 @@
+<?php
+session_start();
+if (!isset($_SESSION["loggedin"])) {
+    $_SESSION["loggedin"] = false;
+}
+?>
 <!DOCTYPE html>
 <html>
 
@@ -7,14 +13,21 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/thread.css">
+    <link rel="stylesheet" href="../css/sidebar.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <script src="../js/share-link.js"></script>
     <title>Fanpit</title>
 </head>
 
 <body>
+
+    <?php include '../components/header.php';?>
+    <?php include '../components/sidebar.php';?>
+
     <div class="container">
         <a href="index.php" class="btn-home">Return Home</a>
         <?php
-        session_start();
+        
         require 'connect.php';
 
         $threadId = isset($_GET['thread_id']) ? $_GET['thread_id'] : null;
@@ -55,7 +68,7 @@
                         <img src="../icons/like.png" alt="Like Icon"> Like
                     </button>
 
-                    <button class="share-button">
+                    <button class="share-button" id="shareButton">
                         <img src="../icons/share.png" alt="Share Icon"> Share
                     </button>
 

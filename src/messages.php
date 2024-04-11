@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (!isset($_SESSION["loggedin"])) {
+    $_SESSION["loggedin"] = false;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,44 +15,14 @@
   <link rel="stylesheet" type="text/css" href="../css/navbar.css">
   <link rel="stylesheet" type="text/css" href="../css/media.css">
   <link rel="stylesheet" type="text/css" href="../css/messages.css">
+  <link rel="stylesheet" type="text/css" href="../css/sidebar.css">
   <title>Fanpit</title>
 </head>
 
 <body>
+  <?php include '../components/header.php'; ?>
+  <?php include '../components/sidebar.php'; ?>
 
- <!-- Sidebar -->
-<div class="col-lg-4 custom-sidebar">
-    <div class="logo">
-      <img src="../images/fanpit_f.png" style="width: 55px; margin-bottom:10px;" alt="Your Logo">
-    </div>
-  
-    <div class="button-section">
-      <button class="button">
-        <img src="../icons/home2.png" alt="Home" style="width: 25px; height: 25px; margin-right: 5px;" />
-      </button>
-      <button class="button">
-        <img src="../icons/popular.png" alt="Popular" style="width: 25px; height: 25px; margin-right: 5px;" />
-      </button>
-      <button class="button">
-        <img src="../icons/suggested.png" alt="All" style="width: 25px; height: 25px; margin-right: 5px;" />
-      </button>
-      <button class="button">
-        <img src="../icons/community.png" alt="Community" style="width: 25px; height: 25px; margin-right: 5px;" />
-      </button>
-      <button class="button">
-        <img src="../icons/about.png" alt="About" style="width: 25px; height: 25px; margin-right: 5px;" />
-      </button>
-      <button class="button">
-        <img src="../icons/help.png" alt="Help" style="width: 25px; height: 25px; margin-right: 5px;" />
-      </button>
-      <button class="button">
-        <img src="../icons/contact.png" alt="Contact" style="width: 25px; height: 25px; margin-right: 5px;" />
-      </button>
-    </div>
-  </div>
-  
-
-  <!-- Container for Messages -->
 
   <div class="messages-container">
     <div class="people-container">
