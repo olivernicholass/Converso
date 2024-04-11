@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             setTimeout(function() {
                 document.body.removeChild(notification);
-            }, 2000);
+            }, 3000);
         }).catch(function(error) {
             console.error('Unable to copy URL to clipboard: ', error);
         });
