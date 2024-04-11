@@ -1,5 +1,6 @@
 .container{
     margin-top: 25px;
+    align-items: center;
 }
 
 .user-profile {
@@ -16,22 +17,37 @@
     border-radius: 5px;
     z-index: 9999;
 }
+
+.main-posts {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .main-post-card .card-img-top {
     margin-bottom: 10px;
     border-radius: 8px;
+}
+
+@media (max-width: 992px) {
+    .custom-sidebar{
+      display: none;
+    }
+    .main-posts{
+       
+    }
 }
 
 .main-post-card {
     padding: 15px;
     margin-bottom: 20px;
     border-radius: 10px;
-    width: 80%;
     margin-left: auto; 
     margin-right: auto; 
 }
 .btn-home{
-    margin-left: auto;
-    margin-right: auto;
+
+    margin-right: 10px;
+    margin-left: 300px;
     position: absolute;
     color: white;
     background-color: #212529;
@@ -39,6 +55,7 @@
     padding: 5px;
     text-decoration: none;
     border-radius: 6px;
+
 }
 .btn-reply{
     background-color: #212529;
@@ -111,7 +128,7 @@
 
 .comment-container {
     margin-top: 1em;
-    width:80%;
+    width:60%;
     margin-left: auto; 
     margin-right: auto; 
 }
