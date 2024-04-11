@@ -1,0 +1,8 @@
+<!-- test suite -->
+<phpunit>
+    <testsuites>
+        <testsuite name="My Application Tests">
+            <file>tests/IndexTest.php</file>
+        </testsuite>
+    </testsuites>
+</phpunit>

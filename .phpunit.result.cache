@@ -1,0 +1,1 @@
+{"version":1,"defects":{"IndexTest::testIndexPage":7,"IndexTest::testDatabaseConnection":7},"times":{"IndexTest::testIndexPage":0.15,"IndexTest::testDatabaseConnection":0.011,"IndexTest::testPageLoads":0.123}}

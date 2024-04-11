@@ -46,8 +46,8 @@ if (!isset($_SESSION["loggedin"])) {
                     require 'connect.php';
 
                     $sql = "SELECT thread.*, section.sname 
-            FROM thread 
-            INNER JOIN section ON thread.sectionid = section.sectionid";
+                            FROM thread 
+                            INNER JOIN section ON thread.sectionid = section.sectionid";
 
                     $result = $connection->query($sql);
 
